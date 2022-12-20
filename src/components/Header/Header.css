@@ -1,0 +1,17 @@
+header {
+    align-items: center;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.0rem;
+}
+
+.navigation {
+    font-size: 2.0rem;
+}
+
+/*.isActive {
+    color: green;
+    font-weight: bold;
+}*/

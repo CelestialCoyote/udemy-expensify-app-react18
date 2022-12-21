@@ -1,9 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
-import configureStore from './store/configureStore';
-import { addExpense } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses';
+import configureStore from './redux/store/configureStore';
+import { addExpense } from './redux/actions/expenses';
+import getVisibleExpenses from './redux/selectors/expenses';
 
 
 const store = configureStore();

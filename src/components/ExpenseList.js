@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExpenseListItem from './ExpenseListItem';
+import ExpenseListItem from '../components/ExpenseListItem/ExpenseListItem';
 import selectExpenses from '../redux/selectors/expenses';
 
 

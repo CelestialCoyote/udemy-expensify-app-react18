@@ -1,5 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
     context: path.resolve(__dirname, "src"),
@@ -7,10 +8,10 @@ module.exports = {
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'index_bundle.js',
+        filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', ',jsx', '.json', '.ts', '.tsx', '.scss']
     },
     module: {
         rules: [
@@ -19,10 +20,11 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'babel-loader',
             }, {
-                test: /\.css$/,
+                test: /\.s?css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ],
@@ -32,6 +34,7 @@ module.exports = {
             template: path.join(__dirname, 'public', 'index.html'),
         }),
     ],
+    devtool: 'eval-cheap-source-map',
     devServer: {
         port: '5000',
         static: {

@@ -5,6 +5,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 
 export default class ExpenseForm extends React.Component {
+//const ExpenseForm = () => {
     constructor(props) {
         super(props);
 

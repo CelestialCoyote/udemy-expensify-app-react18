@@ -1,37 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-const initialState = [];
+const initialState = [
+    { id: 1, description: 'Water bill', amount: 4500, note: 'January water bill', createdAt: 100 },
+    { id: 2, description: 'Gas', amount: 6400, notes: 'gas for work', createdAt: 125 },
+    { id: 3, description: 'Groceries', amount: 12300, notes: 'one week of groceries', createdAt: 110 }
+];
 
-export const expenseSlice = createSlice({
-    name: 'expense',
+const expenseSlice = createSlice({
+    name: 'expenses',
     initialState,
     reducers: {
-        addExpense: state => {
-            return [
-                ...state,
-                action.expense
-            ];
-        },
-        removeExpense: state => {
-            return state.filter(({ id }) => id !== action.id);
-        },
-        //editExpense: () => {
-        //    return state.map((expense) => {
-        //        if (expense.id === action.id) {
-        //            return {
-        //                ...expense,
-        //                ...action.updates
-        //            };
-        //        } else {
-        //            return expense;
-        //        };
-        //    }
-        //}
+        expenseAdded(state, action) {
+            state.push(action.payload);
+        }
     }
+        
 });
 
 
-export const { addExpense, removeExpense } = expenseSlice.actions;
+export const selectAllExpenses = (state) => state.expenses;
+
+export const { expenseAdded } = expenseSlice.actions;
 
 export default expenseSlice.reducer;

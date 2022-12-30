@@ -1,0 +1,7 @@
+.expense-list-item {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    margin: 1.0em;
+    padding: 1.0em;
+}

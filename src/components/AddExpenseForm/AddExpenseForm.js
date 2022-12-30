@@ -3,8 +3,9 @@ import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
 //import moment from 'moment';
-import { expenseAdded } from '../../features/expenses/expensesSlice';
+import { addExpense } from '../../features/expenses/expensesSlice';
 import moment from 'moment';
+
 
 const AddExpenseForm = () => {
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const AddExpenseForm = () => {
         } else {
             setError('');
             dispatch(
-                expenseAdded({
+                addExpense({
                     id: nanoid(),
                     description,
                     amount,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { useNavigate } from 'react-router-dom';
 //import moment from 'moment';
 import { expenseAdded } from '../../features/expenses/expensesSlice';
 import moment from 'moment';
@@ -12,6 +13,7 @@ const AddExpenseForm = () => {
     const [note, setNote] = useState('');
     //const [createdAt, setCreatedAt] = useState(moment());
     const [error, setError] = useState('');
+    let navigate = useNavigate();
 
     const onDescriptionChange = (e) => {
         setDescription(e.target.value);
@@ -52,6 +54,7 @@ const AddExpenseForm = () => {
                 })
             );
         };
+        navigate('/');
     };
 
     return (

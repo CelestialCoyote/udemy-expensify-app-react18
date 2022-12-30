@@ -27,10 +27,10 @@ const Header = () => {
                 Dashboard
             </NavLink>
             <NavLink
-                to="/create"
+                to="/add"
                 style={({ isActive }) => isActive ? activeStyle : notActiveStyle}
             >
-                Create Expense
+                Add New Expense
             </NavLink>
             <NavLink
                 to="/help"
